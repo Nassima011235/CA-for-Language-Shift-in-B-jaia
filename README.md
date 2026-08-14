@@ -71,7 +71,7 @@ Two parameters control the linguistic pressure:
 Both parameters satisfy
 
 \[
-0 \leq P_z,P_e \leq 9.
+0 <= P_z,P_e \leq 9.
 \]
 
 ## Transition Rule
