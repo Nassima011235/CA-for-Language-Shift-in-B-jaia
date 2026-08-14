@@ -80,4 +80,22 @@ $$
 $$
 
 then `n` becomes `1`. Otherwise, it remains unchanged.
+## Important Note
+
+The code was primarily developed and tested using **Spyder**. The version
+available in this repository is provided for reproducibility and may be
+adapted to other Python environments.
+
+For the Béjaïa case study, the initial distribution of the four states is
+based on the following percentages:
+
+| State | Percentage |
+|------:|-----------:|
+| `0` | 36.19% |
+| `1` | 25.16% |
+| `2` | 22.62% |
+| `3` | 16.03% |
+
+These percentages represent the proportions of the four model states used
+to initialize the cellular automaton for the Béjaïa city case study.
 
