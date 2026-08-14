@@ -31,20 +31,7 @@ Thus, the four possible states are:
 | `10` | Algerian Arabic | French | 2 |
 | `11` | Algerian Arabic | English | 3 |
 
-The state `(m,n)` is encoded in base 2 as
 
-\[
-2m+n.
-\]
-
-Therefore:
-
-\[
-00 \rightarrow 0,\qquad
-01 \rightarrow 1,\qquad
-10 \rightarrow 2,\qquad
-11 \rightarrow 3.
-\]
 
 ## Cellular Automaton
 
@@ -59,9 +46,9 @@ For each cell, two neighborhood sums are computed:
 
 Since each coefficient is either 0 or 1,
 
-\[
-0 \leq \Sigma_0,\Sigma_1 \leq 9.
-\]
+$$
+0 \leq \Sigma_0, \Sigma_1 \leq 9.
+$$
 
 Two parameters control the linguistic pressure:
 
