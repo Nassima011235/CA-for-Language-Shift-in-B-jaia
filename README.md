@@ -1,1 +1,103 @@
 # CA-for-Language-Shift-in-Bejaia
+# Cellular Automaton Model for Language Shift in Béjaïa
+
+This repository contains a Python implementation of a two-dimensional
+cellular automaton designed to model language shift in Béjaïa, Algeria.
+
+## Overview
+
+Language shift is influenced by various social and contextual factors,
+including interactions within an individual's immediate social environment.
+Cellular automata provide a natural framework for modeling such local
+interactions.
+
+The model considers four linguistic states. Each cell represents an
+individual and is characterized by a pair `(m,n)`, where:
+
+- `m` indicates the primary language:
+  - `m = 0`: Amazigh
+  - `m = 1`: Algerian Arabic
+
+- `n` indicates the secondary language:
+  - `n = 0`: French
+  - `n = 1`: English
+
+Thus, the four possible states are:
+
+| State | Primary language | Secondary language | Code |
+|------:|------------------|--------------------|-----:|
+| `00` | Amazigh | French | 0 |
+| `01` | Amazigh | English | 1 |
+| `10` | Algerian Arabic | French | 2 |
+| `11` | Algerian Arabic | English | 3 |
+
+The state `(m,n)` is encoded in base 2 as
+
+\[
+2m+n.
+\]
+
+Therefore:
+
+\[
+00 \rightarrow 0,\qquad
+01 \rightarrow 1,\qquad
+10 \rightarrow 2,\qquad
+11 \rightarrow 3.
+\]
+
+## Cellular Automaton
+
+The automaton is defined on a two-dimensional grid using the Moore
+neighborhood of order 1. Each cell therefore interacts with its eight
+neighbors and itself, giving a total of nine cells.
+
+For each cell, two neighborhood sums are computed:
+
+- `Σ₀`: the sum of the coefficients corresponding to `m`;
+- `Σ₁`: the sum of the coefficients corresponding to `n`.
+
+Since each coefficient is either 0 or 1,
+
+\[
+0 \leq \Sigma_0,\Sigma_1 \leq 9.
+\]
+
+Two parameters control the linguistic pressure:
+
+- `P_z`: pressure toward maintaining/using Amazigh;
+- `P_e`: pressure toward maintaining/using French.
+
+Both parameters satisfy
+
+\[
+0 \leq P_z,P_e \leq 9.
+\]
+
+## Transition Rule
+
+The update of a cell is determined by the two neighborhood sums.
+
+For the first component `m`, if
+
+\[
+\Sigma_0 \geq P_z,
+\]
+
+then `m` becomes `1`. Otherwise, it remains unchanged.
+
+Similarly, for the second component `n`, if
+
+\[
+\Sigma_1 \geq P_e,
+\]
+
+then `n` becomes `1`. Otherwise, it remains unchanged.
+
+The resulting dynamics satisfy the following transition structure:
+
+```text
+00 → 00, 01, 10, or 11
+01 → 01 or 11
+10 → 10 or 11
+11 → 11
