@@ -1,4 +1,4 @@
-# CA-for-Language-Shift-in-Bejaia
+
 # Cellular Automaton Model for Language Shift in Béjaïa
 
 This repository contains a Python implementation of a two-dimensional
