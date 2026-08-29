@@ -99,7 +99,7 @@ based on the following percentages:
 These percentages represent the proportions of the four model states used
 to initialize the cellular automaton for the Béjaïa city case study.
 
-#Pre-image Computation
+## Pre-image Computation
 
 This repository also contains code for computing and generating pre-images of finite patterns under the cellular automaton. Given a pattern, the algorithm searches for configurations whose image under the cellular automaton is equal to the specified pattern.
 
